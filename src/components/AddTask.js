@@ -1,5 +1,12 @@
 import { useState } from "react";
-
+import FormControl from "@mui/material/FormControl";
+import {
+  FormHelperText,
+  Input,
+  InputLabel,
+  TextField,
+  Typography,
+} from "@mui/material";
 const AddTask = ({ onAdd }) => {
   const [text, setText] = useState("");
   const [day, setDay] = useState("");
@@ -22,20 +29,25 @@ const AddTask = ({ onAdd }) => {
 
   return (
     <form className="add-form" onSubmit={onSubmit}>
-      <div className="form-control">
+      <div style={{ display: "flex", flexDirection: "column" }}>
         <label>Task</label>
-        <input
-          type="text"
-          placeholder="Add Task"
+        <TextField
+          required
+          id="outlined-required"
+          label=" Add Task"
+          defaultValue=""
           value={text}
           onChange={(e) => setText(e.target.value)}
         />
       </div>
-      <div className="form-control">
+
+      <div style={{ display: "flex", flexDirection: "column" }}>
         <label>Day & Time</label>
-        <input
-          type="text"
-          placeholder="Add Day & Time"
+        <TextField
+          required
+          id="outlined-required"
+          label=" Add Day & Time"
+          defaultValue=""
           value={day}
           onChange={(e) => setDay(e.target.value)}
         />
