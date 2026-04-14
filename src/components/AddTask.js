@@ -1,12 +1,5 @@
 import { useState } from "react";
 import FormControl from "@mui/material/FormControl";
-import {
-  FormHelperText,
-  Input,
-  InputLabel,
-  TextField,
-  Typography,
-} from "@mui/material";
 const AddTask = ({ onAdd }) => {
   const [text, setText] = useState("");
   const [day, setDay] = useState("");
